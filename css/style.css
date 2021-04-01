@@ -66,4 +66,26 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d3e5bd', end
 
 
 
+input[type=text],[type=password],[type=number], select {
+height: 45px;
+    width: 231px;
+    border: 1px solid greenyellow;
+    font-size: 1em;
+    padding: 3px;
+    margin: 10px;
+}
 
+input[type=submit] {
+  width: 40%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}

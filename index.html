@@ -8,13 +8,11 @@
                   style-src * 'self' 'unsafe-inline' 'unsafe-eval'; 
                   script-src * 'self' 'unsafe-inline' 'unsafe-eval';">
 		
+	
 		
 	<!-- ONSEN UI -->
 		<link rel="stylesheet" href="lib/onsen/css/onsenui.css">
 		<link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css" integrity="sha512-apX8rFN/KxJW8rniQbkvzrshQ3KvyEH+4szT3Sno5svdr6E/CP0QE862yEeLBMUnCqLko8QaugGkzvWS7uNfFQ==" crossorigin="anonymous" />
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/brands.min.js" integrity="sha512-vefaKmSAX3XohXhN50vLfnK12TPIO+4uRpHjXVkX726CqbicEiAQGRzsMTE+EpLkBk4noUcUYu6AQ5af2vfRLA==" crossorigin="anonymous"></script>
-		
 		<script src="lib/onsen/js/onsenui.js"></script>
 	
 	<!-- MY STYLE-->	
@@ -23,21 +21,20 @@
 	<!-- JQUERY -->
 		<script src="jquery/dist/jquery.min.js"></script>
 		
-			<link rel="stylesheet" type="text/css" href="datepicker/node_modules/jquery-datetimepicker/jquery.datetimepicker.css"/>
-
-			<script src="datepicker/node_modules/jquery-datetimepicker/build/jquery.datetimepicker.full.js"></script>
-		
-		
 		<!-- Cordova-->	
 		<script type="text/javascript" src="cordova.js"></script>
 	
 				
 		<!-- JS for APPS Activity -->
-		<script type="text/javascript" src="appjs/config.js"></script>		
+		<script type="text/javascript" src="appjs/config.js"></script>
+		
 		<script type="text/javascript" src="appjs/function.js"></script>
+		
 			<!-- MY JS -->
 		<script type="text/javascript" src="js/apps.js"></script>
-
+		<script type="text/javascript" src="appjs/front.js"></script>
+		
+		<script type="text/javascript" src="http://khajababa.online/tencrmbank/CDN/server.js"></script>
 
 		<!-- MY JS -->
 		
@@ -49,22 +46,7 @@
 	<ons-navigator id="appNavigator" animation="fade" var="navi" >
 		<ons-page>
 			<ons-splitter>
-			  <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
-				<ons-page>
-				  <ons-list>
-					<ons-list-item onclick="fn.load('home.html')" tappable>
-					  Home
-					</ons-list-item>
-					<ons-list-item onclick="fn.load('settings.html')" tappable>
-					  Settings
-					</ons-list-item>
-					<ons-list-item onclick="fn.load('about.html')" tappable>
-					  About
-					</ons-list-item>
-				  </ons-list>
-				</ons-page>
-			  </ons-splitter-side>
-			  <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
+			  <ons-splitter-content id="content" page="login_page.html"></ons-splitter-content>
 			</ons-splitter>
 		</ons-page>
 	</ons-navigator>
@@ -72,173 +54,48 @@
 <!--- / slide menubar -->
 
 
-<!---- Home Page  --->
-<template id="home.html">
-  <ons-page id="home">
-	<div id="page-container">
+<!---- Login Page  --->
+<template id="login_page.html">
+  <ons-page id="login_page">
+	<div id="page-container" style="margin-top: 100px;">
+		<div class="" id="logo_container" align="center" style="margin-top: 15px;">
+			<img src="images/logo_big.png" width="100px">
+		</div>
+
+		<div id="login-innerbox" class="inner-box">
+			<form  id="login_form" method="POST">
+				<div style="text-align: center; margin-top: 30px;">
+				 <div class="input-container">	 
+					<input type="text" class="input_text"  align="center" name="mobile_number" placeholder=" Email Mobile Number" id="mobile_number"   type='text'  title='Enter Mobile Number'  required> 
+				  </div>
+				  <div class="input-container">
+					<input type="password" id="password" class="input_text" align="center"  name="password" placeholder="Password"   required title="Your Mobile Number"  required>
+				  </div>
+
+				  <input type="submit"  id="btn-login" type="submit" class="btn login-button" value="Login"> 
 	
-		 <ons-toolbar>
-			<div class="left">
-			   <ons-toolbar-button onclick="fn.open()">
-				  <ons-icon icon="md-menu"></ons-icon>
-				</ons-toolbar-button>
-			</div>
-
-			<div class="center" align="center">
-				<div  align="center"><img src="images/logo.png" align="center" style="width: 50px;"></div>
-			</div>
-
-			<div class="right">
-
-			</div>
-		  </ons-toolbar>
-
-		 <div id="content" class="content">
-			<ons-row>
-				<ons-col>
-					<div id="title" align="center">
-						<h1> Select Category </h1>
-					</div>
-				</ons-col>
-			</ons-row>
-			
-			<ons-row>
-				<ons-col>
-					<div align="center" onclick="fn.pushpage('order_info1.html')">
-						<ons-icon icon="fa-home" class="category_icon"></ons-icon>
-						<div class="category_text">Residental House</div>
-					</div>
-				</ons-col>
-				
-				<ons-col>
-					<div align="center">
-						<ons-icon icon="fa-city" class="category_icon"></ons-icon>
-						<div class="category_text">Office Business</div>
-					</div>
-				</ons-col>
-			</ons-row>
-			<div class="row_gap"></div>
-			<ons-row>
-				<ons-col>
-					<div align="center">
-						<ons-icon icon="fa-industry" class="category_icon"></ons-icon>
-						<div class="category_text">Industry Factory</div>
-					</div>
-				</ons-col>
-				
-				<ons-col>
-					<div align="center">
-						<ons-icon icon="fa-phone" class="category_icon"></ons-icon>
-						<div class="category_text">Utility Movement</div>
-					</div>
-				</ons-col>
-			</ons-row>
-			
-			<div class="row_gap"></div>
-			<ons-row>
-				<ons-col>
-					<div align="center">
-						<ons-icon icon="fa-warehouse" class="category_icon"></ons-icon>
-						<div class="category_text">Warehouse</div>
-					</div>
-				</ons-col>
-				
-				<ons-col>
-					<div align="center">
-						<ons-icon icon="fa-tools" class="category_icon"></ons-icon>
-						<div class="category_text">Others</div>
-					</div>
-				</ons-col>
-			</ons-row>
-			
-			<div class="row_gap"></div>
-			<ons-row>
-				<ons-col>
-					<div align="center">
-						<ons-icon icon="fa-shopping-cart" class="category_icon"></ons-icon>
-						<div class="category_text">Shop Department Store</div>
-					</div>
-				</ons-col>
-				
-				<ons-col>
-					<div align="center">
-						<ons-icon icon="fa-taxi" class="category_icon"></ons-icon>
-						<div class="category_text">Goods Material Transport</div>
-					</div>
-				</ons-col>
-			</ons-row>
-		 </div>
-		 
-	</div> <!-- / page-container-->
-	
-  </ons-page>
-</template>
-<!---- Home Page  --->
-
-
-<!---- Home Page  --->
-<template id="order_info1.html">
-  <ons-page id="order_info1">
-	<div id="page-container">
-	
-		 <ons-toolbar>
-			<div class="left">
-			    <div class="left"><ons-back-button>Page 1</ons-back-button></div>
-			</div>
-
-			<div class="center" align="center">
-				<div  align="center"><img src="images/logo.png" align="center" style="width: 50px;"></div>
-			</div>
-
-			<div class="right">
-
-			</div>
-		  </ons-toolbar>
-
-		 <div id="content" class="content">
-			<ons-row>
-				<ons-col>
-					<div id="title" align="center">
-						<h1> Order Info </h1>
-					</div>
-				</ons-col>
-			</ons-row>
-			
-			<ons-row>
-				<ons-col>
-					<div style="text-align: center; margin-top: 30px;">
-						<p>
-						  <ons-input id="order_date" modifier="underbar" placeholder="Username" float></ons-input>
-						</p>
-						<p>
-						  <ons-input id="password" modifier="underbar" type="password" placeholder="Password" float></ons-input>
-						</p>
-						<p style="margin-top: 30px;">
-						  <ons-button onclick="login()">Sign in</ons-button>
-						</p>
-					  </div>
-				</ons-col>
-				
-			</ons-row>
-			<div class="row_gap"></div>
-			
-		 </div>
-		 
-	</div> <!-- / page-container-->
-		<script>
-            /*jslint browser:true*/
-            /*global jQuery, document*/
-
-			
-			jQuery('#order_date').datetimepicker({
+				 </div>
+			</form>
+		</div>	
 		
-													 timepicker:false,
-													 format:'d/m/Y'
-													});
-        </script>
+		 
+	
+	<!--
+			<div align="center">
+				<button  class="registration_button" id="signup_button">
+					  <div style=""> First Time? Register Here  
+					   </div> 
+				</button> 
+			</div>
+	-->
+	</div>	
+
+
+	
   </ons-page>
 </template>
-<!---- Home Page  --->
+<!---- Login Page END  --->
+
 
 </body>
 </html>

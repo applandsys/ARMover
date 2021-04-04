@@ -18,6 +18,16 @@ window.fn.pushpage = function(page,data,anime){
 	document.querySelector('#appNavigator').pushPage(page,data,{animation: anime});
 }
 
+window.fn.popPage = function(){
+	document.querySelector('#appNavigator').popPage();
+}
+
+window.fn.resetToPage = function(page){
+	document.querySelector('#appNavigator').resetToPage(page, {animation: 'slide'});
+}
+
+
+
 
 function showPopover(target,message) {
    document.getElementById("message_text").innerHTML = message;

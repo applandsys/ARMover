@@ -30,17 +30,14 @@
 		
 		<!-- Cordova-->	
 		<script type="text/javascript" src="cordova.js"></script>
-	
+		
+		<script type="text/javascript" src="js/apps.js"></script>
 				
 		<!-- JS for APPS Activity -->
 		<script type="text/javascript" src="appjs/config.js"></script>		
 		<script type="text/javascript" src="appjs/function.js"></script>
+		<script type="text/javascript" src="appjs/main.js"></script>
 			<!-- MY JS -->
-		<script type="text/javascript" src="js/apps.js"></script>
-
-
-		<!-- MY JS -->
-		
 	</head>
 <body>
 
@@ -55,11 +52,17 @@
 					<ons-list-item onclick="fn.load('home.html')" tappable>
 					  Home
 					</ons-list-item>
+					<ons-list-item onclick="fn.load('order_list.html')" tappable>
+					  Order List
+					</ons-list-item>
 					<ons-list-item onclick="fn.load('settings.html')" tappable>
 					  Settings
 					</ons-list-item>
 					<ons-list-item onclick="fn.load('about.html')" tappable>
 					  About
+					</ons-list-item>
+					<ons-list-item onclick="fn.exit()" tappable>
+					  Sign Out
 					</ons-list-item>
 				  </ons-list>
 				</ons-page>
@@ -104,14 +107,14 @@
 			
 			<ons-row>
 				<ons-col>
-					<div align="center" onclick="fn.pushpage('order_info1.html')">
+					<div align="center" onclick="orderPage(1)">
 						<ons-icon icon="fa-home" class="category_icon"></ons-icon>
 						<div class="category_text">Residental House</div>
 					</div>
 				</ons-col>
 				
 				<ons-col>
-					<div align="center">
+					<div align="center" onclick="orderPage(2)">
 						<ons-icon icon="fa-city" class="category_icon"></ons-icon>
 						<div class="category_text">Office Business</div>
 					</div>
@@ -120,14 +123,14 @@
 			<div class="row_gap"></div>
 			<ons-row>
 				<ons-col>
-					<div align="center">
+					<div align="center" onclick="orderPage(3)">
 						<ons-icon icon="fa-industry" class="category_icon"></ons-icon>
 						<div class="category_text">Industry Factory</div>
 					</div>
 				</ons-col>
 				
 				<ons-col>
-					<div align="center">
+					<div align="center" onclick="orderPage(4)">
 						<ons-icon icon="fa-phone" class="category_icon"></ons-icon>
 						<div class="category_text">Utility Movement</div>
 					</div>
@@ -137,14 +140,14 @@
 			<div class="row_gap"></div>
 			<ons-row>
 				<ons-col>
-					<div align="center">
+					<div align="center" onclick="orderPage(5)">
 						<ons-icon icon="fa-warehouse" class="category_icon"></ons-icon>
 						<div class="category_text">Warehouse</div>
 					</div>
 				</ons-col>
 				
 				<ons-col>
-					<div align="center">
+					<div align="center" onclick="orderPage(6)">
 						<ons-icon icon="fa-tools" class="category_icon"></ons-icon>
 						<div class="category_text">Others</div>
 					</div>
@@ -176,14 +179,14 @@
 <!---- Home Page  --->
 
 
-<!---- Home Page  --->
-<template id="order_info1.html">
-  <ons-page id="order_info1">
+<!---- Order Page  --->
+<template id="order_info.html">
+  <ons-page id="order_info">
 	<div id="page-container">
 	
 		 <ons-toolbar>
 			<div class="left">
-			    <div class="left"><ons-back-button>Page 1</ons-back-button></div>
+			    <div class="left"><ons-back-button>Order Info</ons-back-button></div>
 			</div>
 
 			<div class="center" align="center">
@@ -196,32 +199,52 @@
 		  </ons-toolbar>
 
 		 <div id="content" class="content">
+		 
 			<ons-row>
 				<ons-col>
-					<div id="title" align="center">
-						<h1> Order Info </h1>
+					<div id="login-innerbox" class="inner-box">
+						<h1 align="center"> Place an Order </h1>
+					
+						<form  id="signup_form" method="POST">
+							<div style="text-align: center; margin-top: 30px;">
+							
+							 <div class="input-container">	
+								<label> Date </label><br/>
+								<input type="text" class="input_text"  align="center" name="order_date" placeholder=" Order Date" id="order_date"   type='text'  title='Enter Date'  required> 
+							  </div>
+							
+							 <div class="input-container">	 
+								<label> From (Enter full address) </label>
+								<input type="text" class="input_text"  align="center" name="from_location" placeholder=" From Address " id="from_location"   type='text'  title='Enter From Address'  required> 
+							  </div>
+							  
+							  <div class="input-container">
+							  <label> To (Enter full address) </label>
+								<input type="text" id="to_location" class="input_text" align="center"  name="to_location" placeholder="To Address"   required title="Your To Address"  required>
+							  </div>
+
+							  <input type="submit"  id="btn-login" type="submit" class="btn login-button" value="Continue"> 
+				
+							 </div>
+						</form>
 					</div>
 				</ons-col>
 			</ons-row>
+		 
+			
+			<div class="row_gap"></div>
+			
 			
 			<ons-row>
 				<ons-col>
-					<div style="text-align: center; margin-top: 30px;">
-						<p>
-						  <ons-input id="order_date" modifier="underbar" placeholder="Username" float></ons-input>
-						</p>
-						<p>
-						  <ons-input id="password" modifier="underbar" type="password" placeholder="Password" float></ons-input>
-						</p>
-						<p style="margin-top: 30px;">
-						  <ons-button onclick="login()">Sign in</ons-button>
-						</p>
-					  </div>
+					<div class="contact_info" align="center">
+						<ons-icon icon="fa-phone" class=""></ons-icon>  +8801752729755 <br/>
+						www.armover.biz <br/>
+						arinternational.swt@gmail.com
+					</div>
 				</ons-col>
-				
 			</ons-row>
-			<div class="row_gap"></div>
-			
+		 
 		 </div>
 		 
 	</div> <!-- / page-container-->
@@ -238,7 +261,171 @@
         </script>
   </ons-page>
 </template>
-<!---- Home Page  --->
+<!---- ORder Page end  --->
 
+
+
+<!---- Order Page  --->
+<template id="order_confirm.html">
+  <ons-page id="order_confirm">
+	<div id="page-container">
+	
+		 <ons-toolbar>
+			<div class="left">
+			    <div class="left"><ons-back-button>Order Info</ons-back-button></div>
+			</div>
+
+			<div class="center" align="center">
+				<div  align="center"><img src="images/logo.png" align="center" style="width: 50px;"></div>
+			</div>
+
+			<div class="right">
+
+			</div>
+		  </ons-toolbar>
+
+		 <div id="content" class="content">
+		 
+			<ons-row>
+				<ons-col>
+					<div id="login-innerbox" class="inner-box">
+						<h1 align="center"> Confirm Order </h1>
+				
+							<div style="text-align: center; margin-top: 30px;">
+							
+							 <div class="input-container">	
+								<label> Date </label><br/>
+								<div id="order-date" class="order_data_info"> </div>
+							  </div>
+								
+							 <div class="input-container">	 
+								<label> From (Enter full address) </label>
+								<div id="from-location" class="order_data_info"> </div>
+							  </div>
+							  
+							  <div class="input-container">
+							  <label> To (Enter full address) </label>
+								<div id="to-location" class="order_data_info"> </div>
+							  </div>
+							  
+							</div>
+						
+					</div>
+				</ons-col>
+			</ons-row>
+			
+			
+			<ons-row>
+				<ons-col>
+					<div id="order_cancel_btn" class="buton_wrapper" align="center">
+						<button  id="btn-cancel"  class="cancel_button" onclick="fn.load('home.html');"> Cancel </button>
+					</div>
+				</ons-col>
+				<ons-col>
+					<div id="order_edit_btn" class="buton_wrapper" align="center"> 
+						<button  id="btn-edit"  class="edit_button" onclick="fn.popPage();"> Edit </button>
+					</div>
+				</ons-col>
+			</ons-row>
+			<div class="row_gap"></div>
+			<ons-row>
+				<ons-col>
+					<div id="send_order_request_btn" class="buton_wrapper" align="center">
+						<button  id="send_request_button"  class="send_request_button" > Send Request </button>
+					</div>
+				</ons-col>
+			</ons-row>
+			
+			<div class="row_gap"></div>
+			
+			
+			<ons-row>
+				<ons-col>
+					<div class="contact_info" align="center">
+						<ons-icon icon="fa-phone" class=""></ons-icon>  +8801752729755 <br/>
+						www.armover.biz <br/>
+						arinternational.swt@gmail.com
+					</div>
+				</ons-col>
+			</ons-row>
+		 
+		 </div>
+		 
+	</div> <!-- / page-container-->
+  </ons-page>
+</template>
+<!---- ORder Page end  --->
+
+
+
+
+<!---- Order Page  --->
+<template id="thanks_page.html">
+  <ons-page id="thanks_page">
+	<div id="page-container">
+	
+		 <ons-toolbar>
+			<div class="left">
+			    <ons-toolbar-button onclick="fn.resetToPage('home.html');">
+					<i class="zmdi zmdi-home"></i>
+				</ons-toolbar-button>
+			</div>
+
+			<div class="center" align="center">
+				<div  align="center"><img src="images/logo.png" align="center" style="width: 50px;"></div>
+			</div>
+
+			<div class="right">
+
+			</div>
+		  </ons-toolbar>
+
+		 <div id="content" class="content">
+		 
+			<ons-row>
+				<ons-col>
+					<div id="login-innerbox" class="inner-box">
+						<h1 align="center"> Thank You</h1>
+				
+							<div style="text-align: center; margin-top: 30px;">
+							
+								Order Received with Thanks
+								
+							</div>
+						
+					</div>
+				</ons-col>
+			</ons-row>
+			
+			
+		
+			
+			<div class="row_gap"></div>
+			
+			
+			<ons-row>
+				<ons-col>
+					<div class="contact_info" align="center">
+						<ons-icon icon="fa-phone" class=""></ons-icon>  +8801752729755 <br/>
+						www.armover.biz <br/>
+						arinternational.swt@gmail.com
+					</div>
+				</ons-col>
+			</ons-row>
+		 
+		 </div>
+		 
+	</div> <!-- / page-container-->
+  </ons-page>
+</template>
+<!---- ORder Page end  --->
+
+<ons-modal direction="up">
+  <div style="text-align: center">
+    <p>
+      <ons-icon icon="md-spinner" size="28px" spin></ons-icon> Loading...
+    </p>
+  </div>
+</ons-modal>
 </body>
 </html>

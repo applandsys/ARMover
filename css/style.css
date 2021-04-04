@@ -67,8 +67,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d3e5bd', end
 
 
 input[type=text],[type=password],[type=number], select {
-height: 45px;
-    width: 231px;
+	height: 45px;
+    width: 80%;
     border: 1px solid greenyellow;
     font-size: 1em;
     padding: 3px;
@@ -89,3 +89,79 @@ input[type=submit] {
 input[type=submit]:hover {
   background-color: #45a049;
 }
+
+.registration_button{
+	
+}
+
+.inner-box{
+	margin-top: 50px;
+}
+
+.input-container{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+label{
+	color: green;
+	font-size: 1em;
+	font-weight: bold;
+}
+
+
+.order_data_info{
+	font-size: 1.2em;
+    font-weight: bold;
+    color: darkslategray;
+    padding: 7px;
+}
+
+.cancel_button{
+    border: transparent;
+    padding: 10px;
+    background: #FF2D00;
+    color: #fff;
+    width: 79px;	
+}
+
+.cancel_button:hover{
+    border: transparent;
+    padding: 10px;
+    background: #FC5F3E;
+    color: #fff;
+    width: 79px;	
+}
+
+.edit_button{
+  border: transparent;
+    padding: 10px;
+    background: #F5AB0C;
+    color: #fff;
+    width: 79px;	
+}
+
+.edit_button:hover{
+  border: transparent;
+    padding: 10px;
+    background: #FBCB63;
+    color: #fff;
+    width: 80%;	
+}
+
+.send_request_button{
+  border: transparent;
+    padding: 10px;
+    background: #03A428;
+    color: #fff;
+    width: 80%;	
+}
+
+.send_request_button:hover{
+  border: transparent;
+    padding: 10px;
+    background: #03E136 ;
+    color: #fff;
+    width: 80%;	
+}
+    

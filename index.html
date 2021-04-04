@@ -24,20 +24,12 @@
 		<!-- Cordova-->	
 		<script type="text/javascript" src="cordova.js"></script>
 	
-				
 		<!-- JS for APPS Activity -->
 		<script type="text/javascript" src="appjs/config.js"></script>
-		
 		<script type="text/javascript" src="appjs/function.js"></script>
-		
-			<!-- MY JS -->
-		<script type="text/javascript" src="js/apps.js"></script>
 		<script type="text/javascript" src="appjs/front.js"></script>
-		
-		<script type="text/javascript" src="http://khajababa.online/tencrmbank/CDN/server.js"></script>
-
-		<!-- MY JS -->
-		
+	
+		<!-- MY JS -->	
 	</head>
 <body>
 
@@ -57,45 +49,117 @@
 <!---- Login Page  --->
 <template id="login_page.html">
   <ons-page id="login_page">
-	<div id="page-container" style="margin-top: 100px;">
-		<div class="" id="logo_container" align="center" style="margin-top: 15px;">
-			<img src="images/logo_big.png" width="100px">
-		</div>
-
-		<div id="login-innerbox" class="inner-box">
-			<form  id="login_form" method="POST">
-				<div style="text-align: center; margin-top: 30px;">
-				 <div class="input-container">	 
-					<input type="text" class="input_text"  align="center" name="mobile_number" placeholder=" Email Mobile Number" id="mobile_number"   type='text'  title='Enter Mobile Number'  required> 
-				  </div>
-				  <div class="input-container">
-					<input type="password" id="password" class="input_text" align="center"  name="password" placeholder="Password"   required title="Your Mobile Number"  required>
-				  </div>
-
-				  <input type="submit"  id="btn-login" type="submit" class="btn login-button" value="Login"> 
+	<div id="page-container" style="margin-top: 80px;">
 	
-				 </div>
-			</form>
-		</div>	
+		<ons-row>
+			<ons-col>
+				<div class="" id="logo_container" align="center" style="margin-top: 15px;">
+					<img src="images/logo_big.png" width="100px">
+				</div>
+			</ons-col>
+		</ons-row>
+	
 		
-		 
-	
-	<!--
-			<div align="center">
-				<button  class="registration_button" id="signup_button">
-					  <div style=""> First Time? Register Here  
-					   </div> 
-				</button> 
-			</div>
-	-->
+		<ons-row>
+			<ons-col>
+				<div id="login-innerbox" class="inner-box">
+					<form  id="login_form" method="POST">
+						<div style="text-align: center; margin-top: 30px;">
+						 <div class="input-container">	 
+							<input type="text" class="input_text"  align="center" name="phone" placeholder=" Mobile Number" id="phone"   type='text'  title='Enter Mobile Number'  required> 
+						  </div>
+						  <div class="input-container">
+							<input type="password" id="password" class="input_text" align="center"  name="password" placeholder="Password"   required title="Password"  required>
+						  </div>
+
+						  <input type="submit"  id="btn-login" type="submit" class="btn login-button" value="Login"> 
+			
+						 </div>
+					</form>
+				</div>	
+			</ons-col>
+		</ons-row>
+		<br/>
+		<br/>
+		<ons-row>
+			<ons-col>
+				<div align="center">
+					<button  class="registration_button" id="new_signup">
+						  First Time? Register Here  
+					</button> 
+				</div>
+			</ons-col>
+		</ons-row>	
 	</div>	
-
-
-	
   </ons-page>
 </template>
 <!---- Login Page END  --->
 
 
+<!---- Login Page  --->
+<template id="signup_page.html">
+  <ons-page id="signup_page">
+		<ons-toolbar>
+			<div class="left">
+			    <div class="left"><ons-back-button> Buy Chips </ons-back-button></div>
+			</div>
+
+			<div class="center" align="center">
+				<div  align="center"><img src="images/logo.png" align="center" style="width: 50px;"></div>
+			</div>
+
+			<div class="right">
+
+			</div>
+		</ons-toolbar>
+  
+	<div id="page-container" style="margin-top: 100px;">
+	
+		<ons-row>
+			<ons-col>
+				<div class="" id="logo_container" align="center" style="margin-top: 15px;">
+					<h1> Registration </h1>
+				</div>
+			</ons-col>
+		</ons-row>
+		<ons-row>
+			<ons-col>
+				
+			</ons-col>
+		</ons-row>
+		<ons-row>
+			<ons-col>
+				<div id="login-innerbox" class="inner-box">
+					<form  id="signup_form" method="POST">
+						<div style="text-align: center; margin-top: 30px;">
+						
+						 <div class="input-container">	 
+							<input type="text" class="input_text"  align="center" name="name" placeholder=" Email Your Name" id="name"   type='text'  title='Enter Your Name'  required> 
+						  </div>
+						
+						 <div class="input-container">	 
+							<input type="text" class="input_text"  align="center" name="phone" placeholder=" Email Mobile Number" id="phone"   type='text'  title='Enter Mobile Number'  required> 
+						  </div>
+						  <div class="input-container">
+							<input type="password" id="password" class="input_text" align="center"  name="password" placeholder="Password"   required title="Your Mobile Number"  required>
+						  </div>
+
+						  <input type="submit"  id="btn-login" type="submit" class="btn login-button" value="Signup"> 
+			
+						 </div>
+					</form>
+				</div>
+			</ons-col>
+		</ons-row>	
+	</div>	
+  </ons-page>
+</template>
+<ons-modal direction="up">
+  <div style="text-align: center">
+    <p>
+      <ons-icon icon="md-spinner" size="28px" spin></ons-icon> Loading...
+    </p>
+  </div>
+</ons-modal>
 </body>
 </html>

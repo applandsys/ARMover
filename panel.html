@@ -62,7 +62,7 @@
 					  About
 					</ons-list-item>
 					<ons-list-item onclick="fn.exit()" tappable>
-					  Sign Out
+					  Exit
 					</ons-list-item>
 				  </ons-list>
 				</ons-page>
@@ -418,7 +418,142 @@
 	</div> <!-- / page-container-->
   </ons-page>
 </template>
-<!---- ORder Page end  --->
+<!---- COnfirm ORder Page end  --->
+
+
+<!---- Order List Page  --->
+<template id="order_list.html">
+  <ons-page id="order_list">
+	<div id="page-container">
+	
+		 <ons-toolbar>
+			<div class="left">
+			    <ons-toolbar-button onclick="fn.load('home.html');">
+					<i class="zmdi zmdi-home"></i>
+				</ons-toolbar-button>
+			</div>
+			<div class="center" align="center">
+				<div  align="center"><img src="images/logo.png" align="center" style="width: 50px;"></div>
+			</div>
+			<div class="right">
+			</div>
+		</ons-toolbar>
+
+		<div id="content" class="content">	 
+			<ons-row>
+				<ons-col>
+					<div id="login-innerbox" class="inner-box">
+						<h1 align="center"> Order List</h1>
+				
+							<div style=" margin-top: 10px; padding: 3px;" id="ordr_list">
+							
+								
+								
+							</div>
+						
+					</div>
+				</ons-col>
+			</ons-row>
+			<div class="row_gap"></div>
+			<ons-row>
+				<ons-col>
+					<div class="contact_info" align="center">
+						<ons-icon icon="fa-phone" class=""></ons-icon>  +8801752729755 <br/>
+						www.armover.biz <br/>
+						arinternational.swt@gmail.com
+					</div>
+				</ons-col>
+			</ons-row>
+		 </div>
+	</div> <!-- / page-container-->
+  </ons-page>
+</template>
+
+<!---- Order Page  --->
+<template id="about.html">
+  <ons-page id="about">
+	<div id="page-container">
+	
+		 <ons-toolbar>
+			<div class="left">
+			    <ons-toolbar-button onclick="fn.load('home.html');">
+					<i class="zmdi zmdi-home"></i>
+				</ons-toolbar-button>
+			</div>
+			<div class="center" align="center">
+				<div  align="center"><img src="images/logo.png" align="center" style="width: 50px;"></div>
+			</div>
+			<div class="right">
+			</div>
+		</ons-toolbar>
+
+		<div id="content" class="content">	 
+			<ons-row>
+				<ons-col>
+					<div id="login-innerbox" class="inner-box">
+						<h1 align="center" id="title"></h1>
+						<div style=" margin-top: 10px; padding: 5px; background: #ddd; margin: 5px;" id="detail">	
+						</div>
+					</div>
+				</ons-col>
+			</ons-row>
+			<div class="row_gap"></div>
+			<ons-row>
+				<ons-col>
+					<div class="contact_info" align="center">
+						<ons-icon icon="fa-phone" class=""></ons-icon>  +8801752729755 <br/>
+						www.armover.biz <br/>
+						arinternational.swt@gmail.com
+					</div>
+				</ons-col>
+			</ons-row>
+		 </div>
+	</div> <!-- / page-container-->
+  </ons-page>
+</template>
+
+
+<!---- Order Page  --->
+<template id="settings.html">
+  <ons-page id="settings">
+	<div id="page-container">
+	
+		 <ons-toolbar>
+			<div class="left">
+			    <ons-toolbar-button onclick="fn.load('home.html');">
+					<i class="zmdi zmdi-home"></i>
+				</ons-toolbar-button>
+			</div>
+			<div class="center" align="center">
+				<div  align="center"><img src="images/logo.png" align="center" style="width: 50px;"></div>
+			</div>
+			<div class="right">
+			</div>
+		</ons-toolbar>
+
+		<div id="content" class="content">	 
+			<ons-row>
+				<ons-col>
+					<div id="login-innerbox" class="inner-box">
+						<h1 align="center">Setting</h1>
+						
+					</div>
+				</ons-col>
+			</ons-row>
+			<div class="row_gap"></div>
+			<ons-row>
+				<ons-col>
+					<div class="contact_info" align="center">
+						<ons-icon icon="fa-phone" class=""></ons-icon>  +8801752729755 <br/>
+						www.armover.biz <br/>
+						arinternational.swt@gmail.com
+					</div>
+				</ons-col>
+			</ons-row>
+		 </div>
+	</div> <!-- / page-container-->
+  </ons-page>
+</template>
 
 <ons-modal direction="up">
   <div style="text-align: center">
